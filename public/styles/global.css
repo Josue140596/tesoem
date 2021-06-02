@@ -1,0 +1,11 @@
+@font-face {
+    font-family: Quicksand;
+    src: url('/fonts/Quicksand-VariableFont_wght.ttf');
+}
+html, body{
+    font-family: Quicksand;
+    margin: 0;
+    background: linear-gradient( #D8E5C6 0%, #A3C185 100%);
+    
+}
+
