@@ -2,7 +2,11 @@
 
 
 
-Route::get('/', 'controladorInicio')->name('inicio');
+Route::view('/','inicio')->name('inicio');
+
+Route::get('/registro','controladorRegistro@index');
+Route::post('/registro','controladorRegistro@store');
+
 Route::get('/contacto', 'controladorContacto')->name('contacto');
 Route::get('/login', 'controladorLogin')->name('login');
 Route::get('/nosotros', 'controladorNosotros')->name('nosotros');
