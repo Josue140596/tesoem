@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>HOLA</h1>
+    <h1>Formulario de registro</h1>
     <form action="/registro" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         <input type="text" name="nombre" placeholder="Nombre"><br><br>
