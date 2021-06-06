@@ -9,16 +9,17 @@
 
         <title>Tesoem</title>
 
-       
+        <!-- style icon font awesome -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
      
     </head>
     <body>
     	<!-- Cabecera -->
-    <header>
-    	<div class="contenedor">
+    <header >
+    	
     		
-    		<nav class="menu">
+    		<nav class="menu-nav">
     			<ul>
     				<li><a href="/">Inicio</a></li>
     				<li><a href="/nosotros">Nosotros</a></li>
@@ -28,21 +29,55 @@
     			</ul>
     		</nav>
   
-    	</div>
+    	
     </header>
 <!-- Contenido -->
-    @yield('content')
+    <main>
+
+        @yield('content')
+    </main>
 
 <!-- Pie de pagina -->
     <footer>
-    <div >
-        <div >
-        <p>Autor: Grupo 8S21</p>
-        <p>Carrera: Ingeniria en Sistemas Computacionales</p>
-        <p>Materia: Frameworks<a class="secret" href="../admin">.</a></p>
+
+
+        <!-- Información de contacto -->
+        <div class="informa-contacto-content">
+            <p>Información <br/> de contacto</p>
+            <br/>
+            Paraje San Isidro s/n Barrio
+                 de Tecamachalco,
+                <br/> La Paz C.P.56400 <br/>
+                ( 55 ) 59863497 ext. 118
+                 tesoem@tesoem.edu.mx
+           
+        </div>
+        <!-- Siguenos -->
+        <div class="siguenos-content">
+            <p>Siguenos</p>
+            <div>
+                <i class="fab fa-facebook"></i>  Facebook
+            </div>
+            <br/>
+            <br/>
+            <div>
+                <i class="fab fa-twitter-square"></i>  Twitter
+            </div>
 
         </div>
-    </div>
+        <!-- Envianos un msnj -->
+        <div class="envianos-content">
+            <p>
+            Envianos un mensaje
+            </p>
+
+            
+        </div>
+
+
+
+        <!-- formato SVG wave -->
+        <div class="wave" style="height: 500px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-3.10,21.20 C126.12,88.31 364.27,-75.48 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #686868;"></path></svg></div>
     </footer>
        
     </body>

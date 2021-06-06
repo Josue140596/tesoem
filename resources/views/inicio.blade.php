@@ -2,7 +2,7 @@
 
 @section('content')
 
-<main>Contenido</main>
+<h1>Contenido</h1>
 
 
 
