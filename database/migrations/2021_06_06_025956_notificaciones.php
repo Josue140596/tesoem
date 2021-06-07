@@ -14,12 +14,12 @@ class Notificaciones extends Migration
     public function up()
 
     {
-        Schema::create('Notificaciones',function(Blueprint $table){
-            $table->id();
-            $table->text('Descripcion');
-            $table->date('Fecha_inicio');
-            $table->date('Fecha_final');
-            $table->string('Categoria_notificacion');
+        Schema::create('notificaciones',function(Blueprint $table){
+            $table->id('integer unsigned increment'); //autoincrementable
+            $table->text('descripcion',255); //varchar
+            $table->date('fecha_inicio'); //date
+            $table->date('fecha_final');    //date
+            $table->string('categoria_notificacion',100);   //varchar
           });    
     }
 
@@ -30,6 +30,6 @@ class Notificaciones extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Notificaciones');
+        Schema::dropIfExists('notificaciones');
     }
 }
