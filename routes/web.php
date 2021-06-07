@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\controladorRegistro;
-Auth::routes(['verify' => true]);
+
 
 Route::view('/','inicio')->name('inicio');
 
