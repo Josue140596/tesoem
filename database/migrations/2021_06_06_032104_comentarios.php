@@ -16,7 +16,7 @@ class comentarios extends Migration
         Schema::create('comentarios',function(Blueprint $table){
             $table->integer('id_comentario'); //integer unsigned increment
             $table->string('id_usuario')->unsigneded();    //varchar, la longitud no se asigna porque es una llave foranea       
-            $table->foreign('id_usuario')->references('id')->on('registro'); //Asignando la llave foranea
+            $table->foreign('id_usuario')->references('id_usuario')->on('registro'); //Asignando la llave foranea
             $table->string('comentario');   //varchar
           });  
     }
