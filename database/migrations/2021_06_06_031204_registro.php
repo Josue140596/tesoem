@@ -14,11 +14,7 @@ class Registro extends Migration
     public function up()
     {
         Schema::create('registro',function(Blueprint $table){
-<<<<<<< HEAD
             $table->integer('id_usuario'); //integer unsigned increment
-=======
-            $table->id(); //autoincrementable
->>>>>>> 2c49ce74bc88b141247f3cfffd5e2b7f3c020a45
             $table->string('tipo_de_usuario',15);   //varchar
             $table->string('nombre',50);   //varchar
             $table->string('apellido_p',50);    //varchar
@@ -33,11 +29,7 @@ class Registro extends Migration
             $table->date('fecha_de_nacimiento');    //date
             $table->string('password',255); //varchar
             $table->string('foto',255); //varchar
-<<<<<<< HEAD
             });  
-=======
-        });  
->>>>>>> 2c49ce74bc88b141247f3cfffd5e2b7f3c020a45
     }
 
     /**
