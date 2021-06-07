@@ -15,7 +15,7 @@ class Notificaciones extends Migration
 
     {
         Schema::create('notificaciones',function(Blueprint $table){
-            $table->id('integer unsigned increment'); //autoincrementable
+            $table->integer('id_notificacion'); //integer unsigned increment
             $table->text('descripcion',255); //varchar
             $table->date('fecha_inicio'); //date
             $table->date('fecha_final');    //date

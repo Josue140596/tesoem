@@ -14,10 +14,10 @@ class Contacto extends Migration
     public function up()
     {
         Schema::create('contacto',function(Blueprint $table){
-            $table->id('integer unsigned increment'); //autoincrementable
+            $table->integer('id_contacto');  // Integer Unsigned Increment
             $table->string('nombre', 255); //varchar
             $table->string('asunto', 255);   //varchar
-            $table->sting('mensaje', 255);    //varchar
+            $table->string('mensaje', 255);    //varchar
             $table->string('email', 255);   //varchar
           });  
         //

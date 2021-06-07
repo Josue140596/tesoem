@@ -14,7 +14,7 @@ class Citas extends Migration
     public function up()
     {
         Schema::create('citas',function(Blueprint $table){
-            $table->id('integer unsigned increment'); //autoincrementable
+            $table->integer('id_citas'); //integer unsigned increment
             $table->string('nombre',255); //varchar
             $table->date('fecha');  //date
             $table->datetime('hora');   //time

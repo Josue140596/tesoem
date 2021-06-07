@@ -14,7 +14,7 @@ class comentarios extends Migration
     public function up()
     {
         Schema::create('comentarios',function(Blueprint $table){
-            $table->id('integer unsigned increment'); //autoincrementable
+            $table->integer('id_comentario'); //integer unsigned increment
 
             $table->string('id_usuario')->unsigned();    //varchar, la longitud no se asigna porque es una llave foranea       
             $table->foreign('id_usuario')->references('id')->on('registro'); //Asignando la llave foranea
