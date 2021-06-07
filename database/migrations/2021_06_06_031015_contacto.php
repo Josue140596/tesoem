@@ -13,12 +13,12 @@ class Contacto extends Migration
      */
     public function up()
     {
-        Schema::create('Contacto',function(Blueprint $table){
-            $table->id();
-            $table->text('Descripcion');
-            $table->date('Fecha_inicio');
-            $table->date('Fecha_final');
-            $table->string('Categoria_notificacion');
+        Schema::create('contacto',function(Blueprint $table){
+            $table->integer('id_contacto');  // Integer Unsigned Increment
+            $table->string('nombre', 255); //varchar
+            $table->string('asunto', 255);   //varchar
+            $table->string('mensaje', 255);    //varchar
+            $table->string('email', 255);   //varchar
           });  
         //
     }
@@ -30,6 +30,6 @@ class Contacto extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Contacto');
+        Schema::dropIfExists('contacto');
     }
 }

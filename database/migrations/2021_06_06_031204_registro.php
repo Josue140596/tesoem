@@ -13,22 +13,23 @@ class Registro extends Migration
      */
     public function up()
     {
-        Schema::create('Registro',function(Blueprint $table){
-            $table->id();
-            $table->string('Tipo_de_usuario');
-            $table->string('Nombre');
-            $table->string('Apellido_P');
-            $table->string('Apellido_M');
-            $table->integer('Telefono');
-            $table->string('Email');
-            $table->string('Direccion');
-            $table->string('Codigo_postal');
-            $table->string('Localidad');
-            $table->string('Pais');
-            $table->string('Semestre');
-            $table->date('Fecha_de_nacimiento');
-            $table->string('Password');
-          });  
+        Schema::create('registro',function(Blueprint $table){
+            $table->integer('id_usuario'); //integer unsigned increment
+            $table->string('tipo_de_usuario',15);   //varchar
+            $table->string('nombre',50);   //varchar
+            $table->string('apellido_p',50);    //varchar
+            $table->string('apellido_m',50);    //varchar
+            $table->string('telefono',14); //varchar
+            $table->string('email',100)->unique();    //varchar
+            $table->string('direccion',255);    //varchar
+            $table->string('codigo_postal',5);  //varchar
+            $table->string('localidad',100);    //varchar
+            $table->string('pais',50);  //varchar
+            $table->integer('semestre',2);  //integer
+            $table->date('fecha_de_nacimiento');    //date
+            $table->string('password',255); //varchar
+            $table->string('foto',255); //varchar
+            });  
     }
 
     /**
@@ -38,6 +39,6 @@ class Registro extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Registro');
+        Schema::dropIfExists('registro');
     }
 }
