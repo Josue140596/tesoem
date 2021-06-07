@@ -5,8 +5,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="styles/global.css">
 
+        <!-- Title pestaña navegador -->
         <title>Tesoem</title>
 
         <!-- style icon font awesome -->
@@ -24,7 +26,7 @@
     				<li><a href="/">Inicio</a></li>
     				<li><a href="/nosotros">Nosotros</a></li>
     				<li><a href="/contacto">Contacto</a></li>
-    				<li><a href="/notificaciones">notificaciones</a></li>
+    				<li><a href="/notificaciones">Notificaciones</a></li>
     				<li><a href="/login">Login</a></li>
     			</ul>
     		</nav>
@@ -40,6 +42,9 @@
 <!-- Pie de pagina -->
     <footer>
 
+    <div class="content-uno">
+
+    
 
         <!-- Información de contacto -->
         <div class="informa-contacto-content">
@@ -70,14 +75,33 @@
             <p>
             Envianos un mensaje
             </p>
+            <!-- formulario para enviar al correo -->
+            <form>
+            <input type="text" name="nombre" placeholder="Nombre">
+            <input type="mail" name="email" placeholder="Email"><br><br>
+            <input type="text" name="aunto" placeholder="Asunto"><br><br>
+            <textarea name="mnsj" rows="10" cols="50">Escribe tu mensaje aquí...</textarea>
+            <br/>
+            <br/>
+            <input class="btn" type="submit" value="Enviar" />
+            </form>
 
             
         </div>
 
-
+    </div>
+    <!-- Información del pie de página -->
+    <div class="info-pie-pagina">
+        <hr/>
+        <br/>
+        <p>Copyright ©2021 Grupo 8S21. All rights reserved</p>      
+        <br/>
+        <br/>
+    </div>
+    
 
         <!-- formato SVG wave -->
-        <div class="wave" style="height: 500px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-3.10,21.20 C126.12,88.31 364.27,-75.48 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #686868;"></path></svg></div>
+        <div class="wave" style="height: 700px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-3.10,21.20 C126.12,88.31 364.27,-75.48 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #686868;"></path></svg></div>
     </footer>
        
     </body>

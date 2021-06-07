@@ -1,0 +1,56 @@
+
+/*######### inicio ############ */
+
+.inicio-section{
+    
+    height: 100vh;
+    position: relative;
+}
+
+.wave-inicio-1{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
+}
+.wave-inicio-2{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+.content-titles-and-img{
+    position: relative;
+    height: 100%;
+}
+.title-inicio{
+    color: #A3C185;
+    position: absolute;
+    font-size: 36px;
+    left: 5%;
+}
+.img-inicio{
+    position: absolute;
+    width: 400px;
+    z-index: 1;
+    left: 52%;
+    bottom: 40%;
+    height: 286px;
+}
+.img-logo{
+    position: absolute;
+    left: 130px;
+    bottom: 100px;
+    width: 330px;
+    height: 300px;
+}
+/*######### Notificaciones ############ */
+.notificaciones-section{
+    
+    
+}
+/*######### citas ############ */
+.citas-section{
+
+}
