@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Contacto extends Migration
+class comentarios extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class Contacto extends Migration
      */
     public function up()
     {
-        Schema::create('contacto',function(Blueprint $table){
+        Schema::create('comentarios',function(Blueprint $table){
             $table->id('integer unsigned increment'); //autoincrementable
-            $table->string('nombre', 255); //varchar
-            $table->string('asunto', 255);   //varchar
-            $table->sting('mensaje', 255);    //varchar
-            $table->string('email', 255);   //varchar
+
+            $table->string('id_usuario')->unsigned();    //varchar, la longitud no se asigna porque es una llave foranea       
+            $table->foreign('id_usuario')->references('id')->on('registro'); //Asignando la llave foranea
+
+            $table->string('comentario',255);   //varchar
           });  
-        //
     }
 
     /**
@@ -30,6 +30,6 @@ class Contacto extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contacto');
+        Schema::dropIfExists('comentarios');
     }
 }

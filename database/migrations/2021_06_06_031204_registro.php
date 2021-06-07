@@ -13,23 +13,23 @@ class Registro extends Migration
      */
     public function up()
     {
-        Schema::create('Registro', function (Blueprint $table) {
-            $table->id();
-            $table->string('tipo_de_usuario', 8);
-            $table->string('nombre');
-            $table->string('a_pat');
-            $table->string('a_mat');
-            $table->integer('telefono', 14);
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('direccion', 255);
-            $table->string('cod_postal', 5);
-            $table->string('localidad');
-            $table->string('pais');
-            $table->string('semestre', 2);
-            $table->date('fecha_nacimiento');
-            $table->string('password');
-        });
+        Schema::create('registro',function(Blueprint $table){
+            $table->id(); //autoincrementable
+            $table->string('tipo_de_usuario',15);   //varchar
+            $table->string('nombre',50);   //varchar
+            $table->string('apellido_p',50);    //varchar
+            $table->string('apellido_m',50);    //varchar
+            $table->string('telefono',14); //varchar
+            $table->string('email',100)->unique();    //varchar
+            $table->string('direccion',255);    //varchar
+            $table->string('codigo_postal',5);  //varchar
+            $table->string('localidad',100);    //varchar
+            $table->string('pais',50);  //varchar
+            $table->integer('semestre',2);  //integer
+            $table->date('fecha_de_nacimiento');    //date
+            $table->string('password',255); //varchar
+            $table->string('foto',255); //varchar
+        });  
     }
 
     /**
@@ -39,6 +39,6 @@ class Registro extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Registro');
+        Schema::dropIfExists('registro');
     }
 }
