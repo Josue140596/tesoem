@@ -16,11 +16,12 @@
         <input type="text" name="a_pat" placeholder="Apellido Paterno"><br><br>
         <input type="text" name="a_mat" placeholder="Apellido Materno"><br><br>
         <input type="date" name="fecha_nacimiento" placeholder="Nombre de la Calle"><br><br>
-        <select  name="tipo_usuario">
+        <select  name="id_tipo">
             <option selected>Selecciona el tipo de usuario</option>
-            <option value="1">Alumno</option>
-            <option value="2">Profesor</option>
+            <option value="2">Alumno</option>
+            <option value="3">Profesor</option>
         </select><br><br>
+        
         <input type="text" name="direccion" placeholder="Direccion"><br><br>
         <input type="number" name="cod_postal" placeholder="Codigo Postal"><br><br>
         <input type="text" name="localidad" placeholder="Localidad"><br><br>

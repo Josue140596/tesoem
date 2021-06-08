@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\modeloRegistro;
+use App\modeloUsuarios;
 
-class controladorRegistro extends Controller{
+class controladorUsuarios extends Controller{
     public function index(){            //Creamos un metodo index que soló nos permita usar el controlador y se asigne a la vista registro.
         return view('registro');
     }
@@ -18,12 +18,12 @@ class controladorRegistro extends Controller{
             $nombre_imagen = time().$file->getClientOriginalName();  // Le asignamos la fecha de subida de nuestro archivo.
             $file->move(public_path().'/perfiles/',$nombre_imagen);  // Usamos el metodo move para darle un espacio de guardado de a nuestra imagen.
         }
-        modeloRegistro::create([                                // Despues de hacer la comparacion creamos la asignación de nuestros campos
+        modeloUsuarios::create([                                // Despues de hacer la comparacion creamos la asignación de nuestros campos
             'nombre'=> $registro['nombre'],                     // recabada de nuestro formulario para alojarl a cada campo de la tabla.
             'a_pat'=> $registro['a_pat'],
             'a_mat'=> $registro['a_mat'],
             'fecha_nacimiento'=> $registro['fecha_nacimiento'],
-            'tipo_usuario'=> $registro['tipo_usuario'],
+            'id_tipo'=> $registro['id_tipo'],
             'direccion'=> $registro['direccion'],
             'cod_postal'=> $registro['cod_postal'],
             'localidad'=> $registro['localidad'],
