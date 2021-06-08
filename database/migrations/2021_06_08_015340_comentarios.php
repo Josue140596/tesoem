@@ -6,23 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 class Comentarios extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    
     public function up()
     {
-        //
+        Schema::create('comentarios', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->increments('id_comentario');
+            
+
+            
+            $table->text('comentario',255);
+            });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        //
+        Schema::drop('comentarios');
     }
 }

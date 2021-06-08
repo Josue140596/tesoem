@@ -6,23 +6,16 @@ use Illuminate\Support\Facades\Schema;
 
 class TipoUser extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        //
+        Schema::create('tipo_user', function (Blueprint $table) {            
+            $table->increments('id_tipo');
+            $table->text('tipo',255);
+            }); 
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        //
+        Schema::drop('tipo_user');
     }
 }
