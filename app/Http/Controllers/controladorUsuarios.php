@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\modeloUsuarios;
+use App\modeloTipousers;
 
 class controladorUsuarios extends Controller{
-    public function index(){            //Creamos un metodo index que soló nos permita usar el controlador y se asigne a la vista registro.
-        return view('registro');
+    public function index(){            //Creamos un metodo index que soló nos retornará la vista registro.
+        $typeuser = modeloTipousers::all()->whereBetween('id_tipo', [2, 3])->get();
+        return view('registro', compact('typeuser'));
     }
     
-    public function store(Request $request){        // Creacion del metodo Store (llenado de datos) con la variable request que será recibida 
-        $registro=request()->all();                 // en dicho metodo.
+    public function store(Request $request){        // Creacion del metodo Store (llenado de datos) con la variable request para recibir
+        $registro=request()->all();                 // todos los datos.
         if($request->hasFile('foto')){              // Creamos una comparación para hacer una validación para nuestra foto.
             
             $file=$request->file('foto');

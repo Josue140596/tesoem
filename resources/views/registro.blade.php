@@ -16,12 +16,6 @@
         <input type="text" name="a_pat" placeholder="Apellido Paterno"><br><br>
         <input type="text" name="a_mat" placeholder="Apellido Materno"><br><br>
         <input type="date" name="fecha_nacimiento" placeholder="Nombre de la Calle"><br><br>
-        <select  name="id_tipo">
-            <option selected>Selecciona el tipo de usuario</option>
-            <option value="2">Alumno</option>
-            <option value="3">Profesor</option>
-        </select><br><br>
-        
         <input type="text" name="direccion" placeholder="Direccion"><br><br>
         <input type="number" name="cod_postal" placeholder="Codigo Postal"><br><br>
         <input type="text" name="localidad" placeholder="Localidad"><br><br>
@@ -29,6 +23,15 @@
         <input type="text" name="telefono" placeholder="Telefono"><br><br>
         <input type="email" name="email" placeholder="Correo Electronico"><br><br>
         <input type="password" name="password" placeholder="Contraseña"><br><br><br>
+
+
+        <select  name="id_tipo">
+            @foreach($typeusers as @$typeuser)
+                <option value="{{$typeuser->id_tipo}}">
+                    {{$typeuser->tipo}}
+                </option>
+            @endforeach
+        </select><br><br>
 
         <select name="carrera">
             <option selected>Selecciona tu carrera</option>
