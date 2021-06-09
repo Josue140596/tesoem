@@ -8,6 +8,11 @@
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="styles/global.css">
 
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script  src="{{asset('/js/carrusel.js')}}"></script>
+        
         <!-- Title pestaña navegador -->
         <title>Tesoem</title>
 
@@ -37,6 +42,7 @@
     <main>
 
         @yield('content')
+   
     </main>
 
 <!-- Pie de pagina -->
@@ -101,7 +107,7 @@
     
 
         <!-- formato SVG wave -->
-        <div class="wave" style="height: 700px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-3.10,21.20 C126.12,88.31 364.27,-75.48 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #686868;"></path></svg></div>
+        <div class="wave" style="height: 100%; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-3.10,21.20 C126.12,88.31 364.27,-75.48 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #686868;"></path></svg></div>
     </footer>
        
     </body>
