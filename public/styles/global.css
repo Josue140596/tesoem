@@ -15,6 +15,9 @@ body {
 
 header {
     background-color: #a3c185;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
 }
 
 .titles {
@@ -141,6 +144,26 @@ footer div > p {
 ====Resposive=======
 **********************
 */
+/*######### Icono nav responsive ############ */
+
+.logor{
+    width: 53px;
+    margin: -10px -10px;
+}
+
+#btn-menu{
+    display: none;
+}
+header label{
+    display: none;
+    width: 40px;
+    height: auto;
+    padding: 10px;
+    cursor: pointer;
+    background: #4F4F4F;
+}
+
+
 
 @media only screen and (min-width: 1400px) {
     /* For pantallas mas grandes: */
@@ -152,8 +175,33 @@ footer div > p {
     }
 }
 @media only screen and (max-width: 800px) {
+
     /* For tablets: */
    
+    header label{
+        display: block;
+        
+    }
+    header{
+        margin-bottom: 200px;
+    }
+
+    .menu-nav{
+        position: absolute;
+        background: #A3C185;
+        height: auto;
+        width: 100%;
+        margin-left: -100%;
+        transition: all 0.5s;
+    }
+    .menu-nav ul{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #btn-menu:checked ~ .menu-nav{
+        margin: 0;
+    }
+
     footer div > p {
         text-align: center;
     }

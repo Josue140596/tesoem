@@ -23,6 +23,7 @@
     color: #a3c185;
     position: absolute;
     font-size: 36px;
+    top: 100px;
     left: 5%;
 }
 
@@ -31,7 +32,7 @@
     width: 400px;
     z-index: 1;
     left: 52%;
-    bottom: 320px;
+    bottom: 220px;
     height: 286px;
 }
 .img-logo {
@@ -43,108 +44,116 @@
 }
 /*######### Notificaciones ############ */
 .notificaciones-section {
-    height: 100vh;
-
+    height: auto;
 }
 .notificaciones-section p {
     text-align: center;
-
 }
 
-.titles-carrusel{
+.titles-carrusel {
     font-size: 20px;
 }
 
-#slider {
-  position: relative;
-  overflow: hidden;
-  margin: 20px auto 0 auto;
-  border-radius: 4px;
-  box-shadow: 1px 1px 5px 1px #7d7d7d;
-  width: 800px;
-  height: 500px;
+/* Carrusel */
+@keyframes slidy {
+    0% {
+        left: 0%;
+    }
+    20% {
+        left: 0%;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
 }
 
-#slider ul {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  height: 500px;
-  list-style: none;
+div#slider {
+    overflow: hidden;
+    width: 70%;
+    margin: auto;
+    height: 500px;
 }
-
-#slider ul li {
-  position: relative;
-  display: block;
-  float: left;
-  margin: 0;
-  padding: 0;
-  width: 900px;
-  height: 500px;
-  background: #ccc;
-  text-align: center;
-  
+div#slider figure div {
+    width: 20%;
+    float: left;
+    height: 500px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
 }
-
-div.control_prev, div.control_next {
-  position: absolute;
-  top: 40%;
-  z-index: 999;
-  display: block;
-  padding: 4% 3%;
-  width: auto;
-  height: auto;
-  background: #2a2a2a;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 18px;
-  opacity: 0.8;
-  cursor: pointer;
+div#slider div img {
+    width: 100%;
+    float: left;
+    height: 500px;
+    z-index: 1;
+    filter: brightness(0.5);
 }
-
-div.control_prev:hover, div.control_next:hover {
-  opacity: 1;
-  transition: all 0.2s ease;
+div#slider figure {
+    position: relative;
+    width: 500%;
+    height: 500px;
+    margin: 0;
+    left: 0;
+    text-align: left;
+    font-size: 0;
+    animation: 20s slidy infinite;
 }
-
-div.control_prev {
-  border-radius: 0 2px 2px 0;
+.container-img-text {
+    position: relative;
 }
-
-div.control_next {
-  right: 0;
-  border-radius: 2px 0 0 2px;
+.container-img-text p{
+    position: absolute;
+    text-align: center;
+    z-index: 5;
+    bottom: 0;
+ 
+    font-size: 36px;
+    color: white;
 }
-
-.slider_option {
-  position: relative;
-  margin: 10px auto;
-  width: 160px;
-  font-size: 18px;
-}
-
 
 
 /*######### citas ############ */
 .citas-section {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+
 }
 .citas-section p {
     text-align: center;
 }
-.content-img-text-citas{
-    width: 1200px;
+.content-img-text-citas {
+  
     height: 500px;
-   
+
     margin: auto;
     display: flex;
 }
-.text-citas{
+.text-citas {
     position: relative;
-
 }
-.text-citas p{
+.text-citas p {
     color: white;
     position: absolute;
     top: 103px;
@@ -152,20 +161,9 @@ div.control_next {
     left: 76px;
     font-size: 20px;
 }
-.img-citas{
-    margin: 20px 60px;
+.img-citas {
+    margin: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 ******************
@@ -176,20 +174,67 @@ div.control_next {
 @media only screen and (min-width: 1400px) {
     /* For pantallas mas grandes: */
     .title-inicio {
+        top: 120px;
         font-size: 46px;
         left: 15%;
     }
     .img-inicio {
         width: 600px;
-        bottom: 320px;
+        bottom: 225px;
     }
     .img-logo {
-        left: 420px;
+        left: 400px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .img-inicio {
+        width: 200px;
+        z-index: 1;
+        left: 62%;
+        bottom: 160px;
+        height: 286px;
+    }
+
+    .citas-section {
+        height: auto;
+        
+    
+    }
+    .citas-section p {
+        text-align: center;
+    }
+    .content-img-text-citas {
+        width: 100%;
+        height: 500px;
+    
+        margin: auto;
+        display: flex;
+        background: #a3c185;
+        align-content: center;
+        justify-content: center;
+    }
+    .text-citas {
+       
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column
+    }
+    .text-citas p {
+        position: sticky;
+        width: auto;
+    }
+    .img-citas {
+        display: none;
+    }
+    .vector-buble{
+        display: none;
     }
 }
 @media only screen and (max-width: 800px) {
     /* For tablets: */
     .title-inicio {
+        top: 120px;
         font-size: 26px;
         left: 50px;
     }
@@ -197,7 +242,7 @@ div.control_next {
         width: 200px;
         z-index: 1;
         left: 62%;
-        bottom: 260px;
+        bottom: 160px;
         height: 286px;
     }
     .img-logo {
@@ -205,6 +250,28 @@ div.control_next {
         bottom: 143px;
         width: 230px;
         height: 200px;
+    }
+
+    /* Carrusel */
+    div#slider {
+        height: auto;
+    }
+    div#slider figure div {
+        height: auto;
+    }
+    div#slider  div img{
+        height: auto;
+    }
+    div#slider figure {
+        position: relative;
+        width: 500%;
+        height: auto;
+    }
+    .container-img-text p{
+       
+     
+        font-size: 16px;
+      
     }
 }
 @media only screen and (max-width: 500px) {

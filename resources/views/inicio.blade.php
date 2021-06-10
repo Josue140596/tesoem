@@ -2,6 +2,11 @@
 
 @section('content')
 
+
+<!-- scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="{{asset('/js/carrusel.js')}}"></script>
 <!-- Styles -->
 <link rel="stylesheet" type="text/css" href="styles/vistas-style/inicio_style.css">
 
@@ -69,36 +74,33 @@
 
     <p class="titles">Notificaciones</p>
 
-    <div id="slider" style="width: 800px; height: 500px;">
-        <div class="control_next">
-            <i class="fas fa-chevron-right"></i>
-        </div>
-        <div class="control_prev">
-            <i class="fas fa-chevron-left"></i>
-        </div>
-        <ul>
-            <!-- Se utiliza DB para titulos y img  -->
-            <li style="background-image: url(/img/slide1.jpg); background-size: cover; background-repeat: no-repeat;">
-                <div class="titles-carrusel">
-                    <p>
-                        Titulo
-                        <br />
-                        Fechas
-                    </p>
-                </div>
-            </li>
-            <li style="background-image: url(/img/slide2.jpg); background-size: cover; background-repeat: no-repeat;">
-                <div class="titles-carrusel">
-                    <p>
-                        Titulo
-                        <br />
-                        Fechas
-                    </p>
-                </div>
-            </li>
+    <!-- Carrusel -->
+    <div id="slider">
+        <figure>
+            <div class="container-img-text">
+                <img src="/img/slide1.jpg" alt/>
+                <p>Titulo <br/>fechas</p>
+            </div>
+            <div class="container-img-text">
+                <img src="/img/slide2.jpg" alt/>
+                <p>Titulo <br/>fechas</p>
+             
+               
+            </div>
+            <div class="container-img-text">
+                <img src="/img/slide1.jpg" alt/>
+                <p>Titulo <br/>fechas</p>
+            </div>
+            <div class="container-img-text">
+                <img src="/img/slide2.jpg" alt/>
+                <p>Titulo <br/>fechas</p>
+            </div>
+            
+           
+           
+            
 
-
-        </ul>
+        </figure>
     </div>
 
 
@@ -112,8 +114,9 @@
     <div class="content-img-text-citas">
         <div class="text-citas">
             <p>A la comunidad estudiantil se le informa que con el fin de atender las recomendaciones y evitar propagacion de COVID-19, hasta nuevo aviso, el horario de Atencion Estudiantil, asi como las Citas sera en un Horario de 8:00 - 18:00 horas.
-                Agenda una sita</p>
-            <svg width="584" height="468" viewBox="0 0 584 468" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <a href="/citas">Agenda una sita aquí..</a>
+            </p>
+            <svg class="vector-buble" width="584" height="468" viewBox="0 0 584 468" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M576.589 70.8607C603.843 118.089 548.821 189.668 526.194 268.259C503.054 347.218 512.824 433.188 465.001 459.015C417.692 484.843 313.303 450.529 223.827 412.525C134.351 374.153 59.2734 332.828 23.2773 270.104C-12.2046 207.748 -9.63347 124.73 48.4745 72.3365C106.068 20.312 218.171 -0.71922 329.244 0.0187164C440.318 1.12562 549.335 23.6327 576.589 70.8607Z" fill="#83A958" />
             </svg>
 
