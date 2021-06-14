@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('layout')
 
 @section('content')
@@ -307,3 +308,6 @@
 </section>
 
 @endsection
+=======
+<h1>hola</h1>
+>>>>>>> cf7cdc84ac01829e189f5a20f5191e5a2ebee927

@@ -5,8 +5,8 @@
     <form action="/registro" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         <input type="text" name="nombre" placeholder="Nombre"><br><br>
-        <input type="text" name="a_pat" placeholder="Apellido Paterno"><br><br>
-        <input type="text" name="a_mat" placeholder="Apellido Materno"><br><br>
+        <input type="text" name="apellido_p" placeholder="Apellido Paterno"><br><br>
+        <input type="text" name="apellido_m" placeholder="Apellido Materno"><br><br>
         <input type="date" name="fecha_nacimiento" placeholder="Nombre de la Calle"><br><br>
         <input type="text" name="direccion" placeholder="Direccion"><br><br>
         <input type="number" name="cod_postal" placeholder="Codigo Postal"><br><br>
@@ -18,14 +18,20 @@
 
 
         <select  name="id_tipo">
+<<<<<<< HEAD
            <!--  @foreach($typeusers as @$typeuser) -->
                 <option value="{{$typeuser->id_tipo}}">
                   <!--   {{$typeuser->tipo}} -->
+=======
+            @foreach($typeusers as $typeuser)
+                <option value="{{$typeuser->id_tipo}}">
+                    {{$typeuser->tipo}} 
+>>>>>>> cf7cdc84ac01829e189f5a20f5191e5a2ebee927
                 </option>
           <!--   @endforeach -->
         </select><br><br>
 
-        <select name="carrera">
+        <select name="">
             <option selected>Selecciona tu carrera</option>
             <option value="1">Contabilidad</option>
             <option value="2">Licenciatura en gastronomia</option>
