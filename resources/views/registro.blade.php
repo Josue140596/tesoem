@@ -25,6 +25,10 @@
 </head>
 
 <body>
+      <!-- Loader -->
+      <div id="contenedor_carga">
+            <div id="carga"></div>
+        </div>
 <section class="section-reg">
     <p class="titles ">Bienvenido</p>
     <div class="style-form">
@@ -63,10 +67,7 @@
                 <label>Localidad</label><br />
                 <input type="text" name="localidad" placeholder="Localidad">
             </div>
-            <div>
-                <label>País</label><br />
-                <input type="text" name="pais" placeholder="Pais">
-            </div>
+          
             <div>
                 <label>Teléfono</label><br />
                 <input type="text" name="telefono" placeholder="Telefono">
@@ -149,6 +150,15 @@
         </form>
     </div>
 </section>
+
+<script>
+        window.onload = function(){
+            var contenedor = document.getElementById("contenedor_carga");
+            console.log("hola");
+            contenedor.style.visibility = "hidden";
+            contenedor.style.opacity = "0";
+        }
+    </script>
 
 </body>
 

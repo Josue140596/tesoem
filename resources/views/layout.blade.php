@@ -51,7 +51,14 @@
     <!-- Contenido -->
     <main>
 
+    <!-- Loader -->
+        <div id="contenedor_carga">
+            <div id="carga"></div>
+        </div>
+
         @yield('content')
+
+     
 
     </main>
 
@@ -122,6 +129,16 @@
             </svg></div>
     </footer>
 
+    <script>
+        window.onload = function(){
+            var contenedor = document.getElementById("contenedor_carga");
+            console.log("hola");
+            contenedor.style.visibility = "hidden";
+            contenedor.style.opacity = "0";
+        }
+    </script>
+
 </body>
 
 </html>
+   

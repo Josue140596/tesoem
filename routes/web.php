@@ -12,6 +12,7 @@ Route::get('/registro','controladorUsuarios2@index');
 Route::post('/registro','controladorUsuarios2@store');
 
 Route::get('/contacto', 'controladorContacto')->name('contacto');
+Route::get('/citas', 'ControladorCitas')->name('citas');
 Route::get('/login', 'controladorLogin')->name('login');
 Route::get('/nosotros', 'controladorNosotros')->name('nosotros');
 Route::get('/notificaciones', 'controladorNotificaciones')->name('notificaciones');
