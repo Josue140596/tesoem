@@ -5,10 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    
+  
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="styles/global.css">
 
-   
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('/img/logfav.png') }}">
+
 
     <!-- Title pestaña navegador -->
     <title>Tesoem</title>
@@ -34,10 +38,11 @@
         <nav class="menu-nav">
             <ul>
                 <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{ route('inicio') }}">Inicio</a></li>
-                <li><a href="/nosotros">Nosotros</a></li>
-                <li><a href="/contacto">Contacto</a></li>
                 <li><a href="/notificaciones">Notificaciones</a></li>
-                <li><a href="/login">Login</a></li>
+                <li><a href="/nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="/citas">Citas</a></li>
+                <li><a href="/login">Entrar</a></li>
             </ul>
         </nav>
 
@@ -51,8 +56,8 @@
     </main>
 
     <!-- Pie de pagina -->
-    <footer>
-
+    <footer name="contacto">
+   
         <div class="content-uno">
 
 
@@ -65,7 +70,7 @@
                 de Tecamachalco,
                 <br /> La Paz C.P.56400 <br />
                 ( 55 ) 59863497 ext. 118
-                tesoem@tesoem.edu.mx
+                <a name="contacto">@tesoem.edu.mx</a>
 
             </div>
             <!-- Siguenos -->

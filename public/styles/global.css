@@ -1,10 +1,10 @@
 @font-face {
-    font-family: Quicksand-Bold;
+    font-family: Quicksand-Bold ;
     src: url("/fonts/Quicksand-Bold.ttf");
 }
 html,
 body {
-    font-family: Quicksand-Bold;
+    font-family: Quicksand-Bold !important;
     margin: 0;
 }
 
@@ -22,7 +22,7 @@ header {
 
 .titles {
     color: #a3c185;
-    font-size: 36px;
+    font-size: 50px;
     
 }
 
@@ -55,7 +55,7 @@ main {
     height: 100%;
 }
 footer {
-    height: 700px;
+    height: 700px ;
     color: white;
     display: flex;
     position: relative;
@@ -91,7 +91,7 @@ footer {
 }
 .envianos-content {
     z-index: 1;
-    margin-top: 50px;
+    margin-top: 50px !important;
 }
 .envianos-content input {
     border-radius: 2px;

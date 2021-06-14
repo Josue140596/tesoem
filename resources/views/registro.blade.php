@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Prueba</title>
-</head>
 
-<body>
+<section>
     <h1>Formulario de registro</h1>
     <form action="/registro" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
@@ -26,11 +18,11 @@
 
 
         <select  name="id_tipo">
-            @foreach($typeusers as @$typeuser)
+           <!--  @foreach($typeusers as @$typeuser) -->
                 <option value="{{$typeuser->id_tipo}}">
-                    {{$typeuser->tipo}}
+                  <!--   {{$typeuser->tipo}} -->
                 </option>
-            @endforeach
+          <!--   @endforeach -->
         </select><br><br>
 
         <select name="carrera">
@@ -73,6 +65,5 @@
 
     </form>
 
-</body>
+</section>
 
-</html>

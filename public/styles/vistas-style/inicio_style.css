@@ -156,8 +156,9 @@ div#slider figure {
 .text-citas p {
     color: white;
     position: absolute;
-    top: 103px;
-    width: 400px;
+    top: 46px;
+    text-align: justify;
+    width: 409px;
     left: 76px;
     font-size: 20px;
 }
