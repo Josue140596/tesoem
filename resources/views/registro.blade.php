@@ -1,75 +1,155 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="styles/vistas-style/registro_styles.css">
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="styles/global.css">
+ 
+         <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('/img/logfav.png') }}">
 
 
-<section>
-    <h1>Formulario de registro</h1>
-    <form action="/registro" method="POST" enctype="multipart/form-data">
-        {{csrf_field()}}
-        <input type="text" name="nombre" placeholder="Nombre"><br><br>
-        <input type="text" name="apellido_p" placeholder="Apellido Paterno"><br><br>
-        <input type="text" name="apellido_m" placeholder="Apellido Materno"><br><br>
-        <input type="date" name="fecha_nacimiento" placeholder="Nombre de la Calle"><br><br>
-        <input type="text" name="direccion" placeholder="Direccion"><br><br>
-        <input type="number" name="cod_postal" placeholder="Codigo Postal"><br><br>
-        <input type="text" name="localidad" placeholder="Localidad"><br><br>
-        <input type="text" name="pais" placeholder="Pais"><br><br>
-        <input type="text" name="telefono" placeholder="Telefono"><br><br>
-        <input type="email" name="email" placeholder="Correo Electronico"><br><br>
-        <input type="password" name="password" placeholder="Contraseña"><br><br><br>
+    <!-- Title pestaña navegador -->
+    <title>Registro</title>
+
+    <!-- style icon font awesome -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 
-        <select  name="id_tipo">
-<<<<<<< HEAD
-           <!--  @foreach($typeusers as @$typeuser) -->
-                <option value="{{$typeuser->id_tipo}}">
-                  <!--   {{$typeuser->tipo}} -->
-=======
-            @foreach($typeusers as $typeuser)
-                <option value="{{$typeuser->id_tipo}}">
-                    {{$typeuser->tipo}} 
->>>>>>> cf7cdc84ac01829e189f5a20f5191e5a2ebee927
-                </option>
-          <!--   @endforeach -->
-        </select><br><br>
+</head>
 
-        <select name="">
-            <option selected>Selecciona tu carrera</option>
-            <option value="1">Contabilidad</option>
-            <option value="2">Licenciatura en gastronomia</option>
-            <option value="3">Ingenieria ambiental</option>
-            <option value="4">Ingenieria industrial</option>
-            <option value="5">Ingeniera en administracion</option>
-            <option value="6">Ingeniera en energias renovables</option>
-            <option value="7">Ingeniera en sistemas computacionales</option>
-            <option value="8">Ingenieria en tecnologias de la informacion</option>
-        </select><br><br>
+<body>
+<section class="section-reg">
+    <p class="titles ">Bienvenido</p>
+    <div class="style-form">
 
-        <select name="semestre">
-            <option selected>Selecciona tu semestre</option>
-            <option value="1">Primer Semestre</option>
-            <option value="2">Segundo Semestre</option>
-            <option value="3">Tercer Semestre</option>
-            <option value="4">Cuarto Semestre</option>
-            <option value="5">Quinto Semestre</option>
-            <option value="6">Sexto Semestre</option>
-            <option value="7">Septimo Semestre</option>
-            <option value="8">octavo Semestre</option>
-            <option value="9">noveno Semestre</option>
-            <option value="10">Decimo Semestre</option>
-            <option value="11">Decimo Primer Semestre</option>
-            <option value="12">Decimo Segundo Semestre</option>
-            <option value="13">Decimo Tercer Semestre</option>
-            <option value="14">Decimo Cuarto Semestre</option>
-            <option value="15">Decimo Quinto Semestre</option>
-            <option value="16">Decimo Sexto Semestre</option>
-            <option value="17">Decimo Septimo Semestre</option>
-            <option value="18">Decimo Octavo Semestre</option>
-        </select><br><br>
 
-        <input type="file" name="foto" required><br><br>
+        <form class="content-form" action="/registro" method="POST" enctype="multipart/form-data">
+            {{csrf_field()}}
+            <div>
+                <label>Nombre</label><br />
 
-        <input type="submit" value="Registrarse">
+                <input type="text" name="nombre" placeholder="Nombre">
+            </div>
+            <div>
+                <label>Apellido Paterno</label><br />
+                <input type="text" name="a_pat" placeholder="Apellido Paterno">
 
-    </form>
+            </div>
 
+            <div>
+                <label>Apellido Materno</label><br />
+                <input type="text" name="a_mat" placeholder="Apellido Materno">
+            </div>
+            <div>
+                <label>Fecha de Nacimiento</label><br />
+                <input type="date" name="fecha_nacimiento" placeholder="Nombre de la Calle">
+            </div>
+            <div>
+                <label>Dirección</label><br />
+                <input type="text" name="direccion" placeholder="Direccion">
+            </div>
+            <div>
+                <label>Código postal</label><br />
+                <input type="number" name="cod_postal" placeholder="Codigo Postal">
+            </div>
+            <div>
+                <label>Localidad</label><br />
+                <input type="text" name="localidad" placeholder="Localidad">
+            </div>
+            <div>
+                <label>País</label><br />
+                <input type="text" name="pais" placeholder="Pais">
+            </div>
+            <div>
+                <label>Teléfono</label><br />
+                <input type="text" name="telefono" placeholder="Telefono">
+            </div>
+            <div>
+                <label>Email</label><br />
+                <input type="email" name="email" placeholder="Correo Electronico">
+            </div>
+            <div>
+                <label>Contraseña</label><br />
+                <input type="password" name="password" placeholder="Contraseña">
+            </div>
+
+
+            <div>
+                <label>Tipo</label>
+                <br />
+                <select name="id_tipo">
+                    @foreach($typeusers as $typeuser)
+                    <option value="{{$typeuser->id_tipo}}">
+                        {{$typeuser->tipo}}
+                    </option>
+                    @endforeach
+                </select>
+
+            </div>
+
+            <div>
+                <label>Carrera</label><br />
+                <select name="carrera">
+                    <option selected>Selecciona tu carrera</option>
+                    <option value="1">Contabilidad</option>
+                    <option value="2">Licenciatura en gastronomia</option>
+                    <option value="3">Ingenieria ambiental</option>
+                    <option value="4">Ingenieria industrial</option>
+                    <option value="5">Ingeniera en administracion</option>
+                    <option value="6">Ingeniera en energias renovables</option>
+                    <option value="7">Ingeniera en sistemas computacionales</option>
+                    <option value="8">Ingenieria en tecnologias de la informacion</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Semestre</label><br />
+                <select name="semestre">
+                    <option selected>Selecciona tu semestre</option>
+                    <option value="1">Primer Semestre</option>
+                    <option value="2">Segundo Semestre</option>
+                    <option value="3">Tercer Semestre</option>
+                    <option value="4">Cuarto Semestre</option>
+                    <option value="5">Quinto Semestre</option>
+                    <option value="6">Sexto Semestre</option>
+                    <option value="7">Septimo Semestre</option>
+                    <option value="8">octavo Semestre</option>
+                    <option value="9">noveno Semestre</option>
+                    <option value="10">Decimo Semestre</option>
+                    <option value="11">Decimo Primer Semestre</option>
+                    <option value="12">Decimo Segundo Semestre</option>
+                    <option value="13">Decimo Tercer Semestre</option>
+                    <option value="14">Decimo Cuarto Semestre</option>
+                    <option value="15">Decimo Quinto Semestre</option>
+                    <option value="16">Decimo Sexto Semestre</option>
+                    <option value="17">Decimo Septimo Semestre</option>
+                    <option value="18">Decimo Octavo Semestre</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Foto</label><br />
+                <input type="file" name="foto" required><br><br>
+
+            </div>
+            <div>
+
+
+                <input class="btn-re" type="submit" value="Registrar">
+
+            </div>
+
+        </form>
+    </div>
 </section>
 
+</body>
+
+</html>

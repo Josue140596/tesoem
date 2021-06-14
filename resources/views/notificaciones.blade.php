@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+
 @extends('layout')
 
 @section('content')
 
 
-<!-- Styles -->
+
 <!-- Styles -->
 <link rel="stylesheet" type="text/css" href="styles/vistas-style/inicio_style.css">
 
@@ -308,6 +308,5 @@
 </section>
 
 @endsection
-=======
-<h1>hola</h1>
->>>>>>> cf7cdc84ac01829e189f5a20f5191e5a2ebee927
+
+
