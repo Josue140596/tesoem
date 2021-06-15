@@ -25,6 +25,7 @@ class Usuarios extends Migration
             $table->string('pais',50);
             $table->date('fecha_de_nacimiento');
             $table->text('password',255);
+            $table->text('matricula',255);
             $table->text('foto',255);
             }); 
     }

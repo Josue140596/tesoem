@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use App\modeloUsuarios;
 use App\modeloTipousers;
 
-class controladorUsuarios extends Controller{
+class controladorUsuarios extends Controller
+{
     public function index(){            //Creamos un metodo index que soló nos retornará la vista registro.
         $typeusers = modeloTipousers::all()->whereBetween('id_tipo', [2, 3]);
-        return view('registro', compact('typeuser'));
+        return view('registro', compact('typeusers'));
     }
     
     public function store(Request $request){        // Creacion del metodo Store (llenado de datos) con la variable request para recibir
@@ -20,25 +21,28 @@ class controladorUsuarios extends Controller{
             $nombre_imagen = time().$file->getClientOriginalName();  // Le asignamos la fecha de subida de nuestro archivo.
             $file->move(public_path().'/perfiles/',$nombre_imagen);  // Usamos el metodo move para darle un espacio de guardado de a nuestra imagen.
         }
+
+
         modeloUsuarios::create([                                // Despues de hacer la comparacion creamos la asignación de nuestros campos
-            'nombre'=> $registro['nombre'],                     // recabada de nuestro formulario para alojarl a cada campo de la tabla.
-            'a_pat'=> $registro['a_pat'],
-            'a_mat'=> $registro['a_mat'],
-            'fecha_nacimiento'=> $registro['fecha_nacimiento'],
+            
             'id_tipo'=> $registro['id_tipo'],
+            'nombre'=> $registro['nombre'],
+            'apellido_p'=> $registro['apellido_p'],
+            'apellido_m'=> $registro['apellido_m'],
+            'telefono'=> $registro['telefono'],
+            'semestre'=> $registro['semestre'],
+            'email'=> $registro['email'],
             'direccion'=> $registro['direccion'],
             'cod_postal'=> $registro['cod_postal'],
             'localidad'=> $registro['localidad'],
             'pais'=> $registro['pais'],
-            'telefono'=> $registro['telefono'],
-            'email'=> $registro['email'],
-            'password'=> bcrypt($registro['password']), 
-            'semestre'=> $registro['semestre'],
+            'fecha_nacimiento'=> $registro['fecha_nacimiento'],
+            'password'=> bcrypt($registro['password']),
+            'matricula'=> $pins,
             'foto'=> $nombre_imagen
+
         ]);
         return back();
 
     }
-
-
 }

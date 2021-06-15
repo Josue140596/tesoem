@@ -20,7 +20,8 @@
 
     <!-- style icon font awesome -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!--<script  type="text/javascript" src="/js/matricula.js"></script>-->
 
 </head>
 
@@ -38,7 +39,7 @@
             {{csrf_field()}}
             <div>
                 <label>Nombre</label><br />
-
+                <!--<input type="text" name="matricula" onkeypress="matriculado();" >-->
                 <input type="text" name="nombre" placeholder="Nombre">
             </div>
             <div>
