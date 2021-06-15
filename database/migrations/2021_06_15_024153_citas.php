@@ -6,20 +6,23 @@ use Illuminate\Support\Facades\Schema;
 
 class Citas extends Migration
 {
-
     public function up()
     {
         Schema::create('citas', function (Blueprint $table) {            
-            $table->increments('id_cita');
-            $table->text('nombre',255);
+            $table->increments('id_citas');
+            $table->string('nombre',50);
             $table->date('fecha');
-            $table->dateTime('hora');
-            $table->text('categoria',255);
-            $table->text('asunto',255);
-            });
-    }
+            $table->timestamp('hora');
+            $table->text('categoria',100);
+            $table->text('asunto',100);
+            }); 
+    }    
 
-
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::drop('citas');

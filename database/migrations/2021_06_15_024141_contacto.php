@@ -9,15 +9,15 @@ class Contacto extends Migration
 
     public function up()
     {
-        Schema::create('contacto', function (Blueprint $table) {
+        Schema::create('contacto', function (Blueprint $table) {            
             $table->increments('id_contacto');
-            $table->text('nombre',255);
-            $table->text('asunto',255);
+            $table->string('nombre',50);
+            $table->text('asunto',100);
             $table->text('mensaje',255);
-            $table->text('email',255);
-            });        
+            $table->text('email',100);
+        });         
     }
-
+    
     public function down()
     {
         Schema::drop('contacto');

@@ -6,27 +6,29 @@ use Illuminate\Support\Facades\Schema;
 
 class Usuarios extends Migration
 {
+
     public function up()
     {
         Schema::create('usuarios', function (Blueprint $table) {            
             $table->increments('id_usuario');
 
-            //$table->integer('id_tipo');
+            $table->integer('id_tipo')->unsigned();
+            $table->foreign('id_tipo')
+            ->references('id_tipo')->on('tipo_user');
 
             $table->string('nombre',50);
-            $table->string('apellido_p',50);
-            $table->string('apellido_m',50);
+            $table->string('a_pat',50);
+            $table->string('a_mat',50);
             $table->string('telefono',14);
-            $table->string('semestre',2);
             $table->string('email',100)->unique();
             $table->text('direccion',255);
-            $table->string('codigo_postal',5);
+            $table->string('cod_postal',5);
             $table->string('localidad',100);
-            $table->string('pais',50);
-            $table->date('fecha_de_nacimiento');
+            $table->string('semestre',2);
+            $table->date('fecha_nacimiento');
             $table->text('password',255);
-            $table->text('matricula',255);
             $table->text('foto',255);
+            $table->String('matricula',9);
             }); 
     }
 
