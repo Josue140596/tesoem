@@ -27,18 +27,17 @@ class controladorUsuarios extends Controller
             
             'id_tipo'=> $registro['id_tipo'],
             'nombre'=> $registro['nombre'],
-            'apellido_p'=> $registro['apellido_p'],
-            'apellido_m'=> $registro['apellido_m'],
+            'a_pat'=> $registro['a_pat'],
+            'a_mat'=> $registro['a_mat'],
             'telefono'=> $registro['telefono'],
             'semestre'=> $registro['semestre'],
             'email'=> $registro['email'],
             'direccion'=> $registro['direccion'],
             'cod_postal'=> $registro['cod_postal'],
             'localidad'=> $registro['localidad'],
-            'pais'=> $registro['pais'],
             'fecha_nacimiento'=> $registro['fecha_nacimiento'],
             'password'=> bcrypt($registro['password']),
-            'matricula'=> $pins,
+            'matricula'=> $registro['matricula'],
             'foto'=> $nombre_imagen
 
         ]);
