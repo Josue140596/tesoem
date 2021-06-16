@@ -19,15 +19,15 @@ class Notificaciones extends Migration
             $table->foreign('id_categoria')
             ->references('id_categoria')->on('categorias_notificaciones');
 
+            $table->integer('id_tipo')->unsigned();
+            $table->foreign('id_tipo')
+            ->references('id_tipo')->on('tipo_user');
+
             $table->text('imagen_referencial',255);            
             }); 
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::drop('notificaciones');
