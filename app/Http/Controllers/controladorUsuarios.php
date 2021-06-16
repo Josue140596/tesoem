@@ -10,6 +10,7 @@ class controladorUsuarios extends Controller
 {
     public function index(){            //Creamos un metodo index que soló nos retornará la vista registro.
         $typeusers = modeloTipousers::all()->whereBetween('id_tipo', [2, 3]);
+        $cmatricula = modeloTipousers::
         return view('registro', compact('typeusers'));
     }
     
