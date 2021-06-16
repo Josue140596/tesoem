@@ -11,7 +11,7 @@ class Carreras extends Migration
     {
         Schema::create('carreras', function (Blueprint $table) {            
             $table->increments('id_carrera');
-            $table->String('carrera',50);
+            $table->Text('carrera',255);
             }); 
     }
 
