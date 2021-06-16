@@ -7,9 +7,9 @@ Route::view('/','inicio')->name('inicio');
 Route::get('/registro','controladorUsuarios@index');
 Route::post('/registro','controladorUsuarios@store');
 
-Route::get('/contacto', 'controladorContacto')->name('contacto');
+Route::view('/contacto','contacto')->name('contacto');
 Route::get('/citas', 'ControladorCitas')->name('citas');
 Route::get('/login', 'controladorLogin')->name('login');
-Route::get('/nosotros', 'controladorNosotros')->name('nosotros');
+Route::view('/nosotros','nosotros')->name('nosotros');
 Route::get('/notificaciones', 'controladorNotificaciones')->name('notificaciones');
 
