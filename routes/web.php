@@ -11,5 +11,6 @@ Route::view('/contacto','contacto')->name('contacto');
 Route::get('/citas', 'ControladorCitas')->name('citas');
 Route::get('/login', 'controladorLogin')->name('login');
 Route::view('/nosotros','nosotros')->name('nosotros');
-Route::get('/notificaciones', 'controladorNotificaciones')->name('notificaciones');
+
+Route::get('/notificaciones', 'controladorNotificaciones@notificaciones_generales')->name('notificaciones');
 

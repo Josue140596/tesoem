@@ -28,101 +28,56 @@
     <div class="wrapper">
 
 
-       
-        <div class="carousel">
-            <div>
-                <div class="card">
-                    <div class="card-header">
-                        <img src="/img/logoteso.png">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-content">
-                            <div class="card-title">esta es la primera</div>
-                            <div class="card-text">
-                                <h1>titulo</h1>
-                                <h3>subtitulo</h3>
-                                <p>Invitación a cuando menos 3 personas para contratar el servicio integral de limpieza en oficinas del estado de Veracruz. Invitación a cuando menos tres personas para contratar el servicio de vigilancia en oficinas de Baja California Sur</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="card">
-                    <div class="card-header">
-                        <img src="/img/logoteso.png">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-content">
-                            <div class="card-title">esta es la primera</div>
-                            <div class="card-text">
-                                <h1>titulo</h1>
-                                <h3>subtitulo</h3>
-                                <p>Invitación a cuando menos 3 personas para contratar el servicio integral de limpieza en oficinas del estado de Veracruz. Invitación a cuando menos tres personas para contratar el servicio de vigilancia en oficinas de Baja California Sur</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="card">
-                    <div class="card-header">
-                        <img src="/img/logoteso.png">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-content">
-                            <div class="card-title">esta es la primera</div>
-                            <div class="card-text">
-                                <h1>titulo</h1>
-                                <h3>subtitulo</h3>
-                                <p>Invitación a cuando menos 3 personas para contratar el servicio integral de limpieza en oficinas del estado de Veracruz. Invitación a cuando menos tres personas para contratar el servicio de vigilancia en oficinas de Baja California Sur</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="card">
-                    <div class="card-header">
-                        <img src="/img/logoteso.png">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-content">
-                            <div class="card-title">esta es la primera</div>
-                            <div class="card-text">
-                                <h1>titulo</h1>
-                                <h3>subtitulo</h3>
-                                <p>Invitación a cuando menos 3 personas para contratar el servicio integral de limpieza en oficinas del estado de Veracruz. Invitación a cuando menos tres personas para contratar el servicio de vigilancia en oficinas de Baja California Sur</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="card">
-                    <div class="card-header">
-                        <img src="/img/logoteso.png">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-content">
-                            <div class="card-title">esta es la primera</div>
-                            <div class="card-text">
-                                <h1>titulo</h1>
-                                <h3>subtitulo</h3>
-                                <p>Invitación a cuando menos 3 personas para contratar el servicio integral de limpieza en oficinas del estado de Veracruz. Invitación a cuando menos tres personas para contratar el servicio de vigilancia en oficinas de Baja California Sur</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           
-          
-           
 
+        <div class="carousel">
+            @if($notificaciones)
+                @forelse($notificaciones as $notificacion)
+                    @forelse($catnotificaciones as $catnotificacion)
+                        @if($notificacion->id_categoria === $catnotificacion->id_categoria)
+                            <div>
+                                <div class="card">
+                                    <div class="card-header">
+                                    <img src="/notificaciones_imagenes/{{ $notificacion->imagen_referencial }}" style="width:480px; height:438px; padding:15px;">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-content">
+                                            <div class="card-title">{{ $catnotificacion->categoria }}</div>
+                                            <div class="card-text">
+                                                <h1> Desde: {{ $notificacion->fecha_inicio }}</h1>
+                                                <h3> Hasta: {{ $notificacion->fecha_final}}</h3>
+                                                <p>{{ $notificacion->descripcion }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                            
+                            </div>                        
+                        @endif
+                    @empty
+                    @endforelse
+                @empty
+                    <div>
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="/img/logoteso.png">
+                            </div>
+                            <div class="card-body">
+                                <div class="card-content">
+                                    <div class="card-title">No existen notificaciones</div>
+                                    <div class="card-text">
+                                        <h1>No hay notificaciones por el momento</h1>
+                                        <h3>Quiza sea un error</h3>
+                                        <p>Intenta mas tarde</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforelse
+            @endif
 
         </div>
 
-      
+    
     </div>
 
 
