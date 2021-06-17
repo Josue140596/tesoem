@@ -10,11 +10,6 @@ use Illuminate\Contracts\Cache\Store;
 class controladorNotificaciones extends Controller
 {
 
-    public function index(){            //Creamos un metodo index que soló nos retornará la vista registro.
-    
-        
-    }
-
     public function store(Request $request){            // Creacion del metodo Store (llenado de datos) con la variable request para recibir. quiza para añadir notificaciones
         $registro=request()->all();                 // todos los datos.
         //tbh copy paste
@@ -27,22 +22,18 @@ class controladorNotificaciones extends Controller
 
     }
 
-    public function categorias_slide(){             //Quiza para ordenar por modificaciones/buscar por categoria
-
-    }
-
     public function notificaciones_generales(){                                         // metodo para llamar las notificaciones en general
+        //generales
         $notificaciones = modeloNotificaciones::all();                                  // todos los datos de notificaciones.
         $catnotificaciones = modeloCategoriasNotificaciones::all();                     // todos los datos de categorias de notificaciones.
-        return view('notificaciones', compact('notificaciones','catnotificaciones'));   // regresamos los datos a la vista de notificaciones.
+        //alumnos
+        $consultaextraA = modeloNotificaciones::all()->whereBetween('id_categoria',[6,10]);
+        $anotificaciones = modeloNotificaciones::all()->whereBetween('id_categoria',[0,4])->union($consultaextraA);                                  // todos los datos de notificaciones.
+        $acatnotificaciones = modeloCategoriasNotificaciones::all();
+        //profesores        
+        $pnotificaciones = modeloNotificaciones::all()->whereBetween('id_categoria',[4,10]);                                  // todos los datos de notificaciones.
+        $pcatnotificaciones = modeloCategoriasNotificaciones::all();
+        return view('notificaciones', compact('notificaciones','catnotificaciones','anotificaciones','acatnotificaciones','pnotificaciones','pcatnotificaciones'));   // regresamos los datos a la vista de notificaciones.
 
-    }
-
-    public function notificaciones_alumnos(){                                           // metodo para llamar las notificaciones de alumnos
-
-    }
-
-    public function notificaciones_profesores(){                                        // metodo para llamar las notificaciones de profesores
-        
     }
 }
