@@ -12,7 +12,7 @@ class Citas extends Migration
             $table->increments('id_citas');
             $table->string('nombre',50);
             $table->date('fecha');
-            $table->timestamp('hora');
+            $table->time('hora');
             $table->text('categoria',100);
             $table->text('asunto',100);
             }); 
