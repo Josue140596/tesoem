@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controladorRegistro;
 
 Route::get('/','controladorNotificaciones@solo_categorias')->name('inicio');
@@ -17,3 +17,14 @@ Route::view('/nosotros','nosotros')->name('nosotros');
 
 Route::get('/notificaciones', 'controladorNotificaciones@notificaciones_generales')->name('notificaciones');
 
+
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
