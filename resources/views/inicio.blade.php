@@ -84,8 +84,6 @@
             <div class="container-img-text">
                 <img src="/img/slide2.jpg" alt/>
                 <p>Titulo <br/>fechas</p>
-             
-               
             </div>
             <div class="container-img-text">
                 <img src="/img/slide1.jpg" alt/>
@@ -95,11 +93,6 @@
                 <img src="/img/slide2.jpg" alt/>
                 <p>Titulo <br/>fechas</p>
             </div>
-            
-           
-           
-            
-
         </figure>
     </div>
 
