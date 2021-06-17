@@ -31,51 +31,20 @@
 		<div id="carga"></div>
 	</div>
 
-	@if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/') }}" class="text-sm text-gray-700 underline">Inicio</a>
-                    @else
-                        <a href="{{ route('/login') }}" class="text-sm text-gray-700 underline">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('/registro') }}" class="ml-4 text-sm text-gray-700 underline">Registro</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-
 	<section class="section-login">
 		<p class="titles ">Bienvenido</p>
 		<div class="content-form">
-			<form method="POST" action="{{ route('login') }}">
+			<form method="POST">
 				{{csrf_field()}}
 
-				<label>Email</label>
+				<label>Matricula</label>
 				<br />
-				<input id="email"  type="email" name="email" :value="old('email')" required autofocus />
+				<input type="text" />
 				<br />
 				<label>Contraseña</label>
 				<br />
-				<input  id="password" type="password" name="password" required autocomplete="current-password" />
+				<input type="password" />
 				<br />
-				<label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox"  name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-
-				<div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
 
 				<input class="btn-login" type="submit" value="Entrar" />
 				<br />
