@@ -36,4 +36,8 @@ class controladorNotificaciones extends Controller
         return view('notificaciones', compact('notificaciones','catnotificaciones','anotificaciones','acatnotificaciones','pnotificaciones','pcatnotificaciones'));   // regresamos los datos a la vista de notificaciones.
 
     }
+    public function solo_categorias(){
+        $catnotificaciones = modeloCategoriasNotificaciones::all();//->whereBetween('id_categoria',[0,4]);                     // todos los datos de categorias de notificaciones.
+        return view('inicio',compact('catnotificaciones'));
+    }
 }

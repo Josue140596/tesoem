@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\controladorRegistro;
 
-Route::view('/','inicio')->name('inicio');
+Route::get('/','controladorNotificaciones@solo_categorias')->name('inicio');
 
 Route::get('/registro','controladorUsuarios@index');
 Route::post('/registro','controladorUsuarios@store');

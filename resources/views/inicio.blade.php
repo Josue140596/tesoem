@@ -77,35 +77,50 @@
     <!-- Carrusel -->
     <div id="slider">
         <figure>
+        @if($catnotificaciones)
+            @forelse($catnotificaciones as $catnotificacion)
+                <div class="container-img-text">
+                    <img src="/notificaciones_imagenes/{{campodelabasededatos}}" style="width:480px; height:438px; padding:15px;">
+                    <p>{{ $catnotificacion->categoria}} </p>
+                </div>
+            @empty
             <div class="container-img-text">
                 <img src="/img/slide1.jpg" alt/>
-                <p>Titulo <br/>fechas</p>
+                <p>Titulo1 <br/>fechas</p>
             </div>
             <div class="container-img-text">
                 <img src="/img/slide2.jpg" alt/>
-                <p>Titulo <br/>fechas</p>
-             
-               
+                <p>Titulo2 <br/>fechas</p>
             </div>
             <div class="container-img-text">
                 <img src="/img/slide1.jpg" alt/>
-                <p>Titulo <br/>fechas</p>
+                <p>Titulo3 <br/>fechas</p>
             </div>
             <div class="container-img-text">
                 <img src="/img/slide2.jpg" alt/>
-                <p>Titulo <br/>fechas</p>
+                <p>Titulo4 <br/>fechas</p>
             </div>
-            
-           
-           
-            
-
+            <div class="container-img-text">
+                <img src="/img/slide1.jpg" alt/>
+                <p>Titulo5 <br/>fechas</p>
+            </div>
+            <div class="container-img-text">
+                <img src="/img/slide2.jpg" alt/>
+                <p>Titulo6 <br/>fechas</p>
+            </div>
+            <div class="container-img-text">
+                <img src="/img/slide1.jpg" alt/>
+                <p>Titulo7 <br/>fechas</p>
+            </div>
+            <div class="container-img-text">
+                <img src="/img/slide2.jpg" alt/>
+                <p>Titulo8 <br/>fechas</p>
+            </div>
+            @endforelse
+        @endif
         </figure>
     </div>
-
-
-
-
+    
 </section>
 
 <!-- Citas section -->
