@@ -80,7 +80,7 @@
         @if($catnotificaciones)
             @forelse($catnotificaciones as $catnotificacion)
                 <div class="container-img-text">
-                    <img src="/notificaciones_imagenes/{{campodelabasededatos}}" style="width:480px; height:438px; padding:15px;">
+                    <img src="/notificaciones_imagenes/{{ $catnotificacion->imagen_categoria }}" style="width:480px; height:438px; padding:15px;">
                     <p>{{ $catnotificacion->categoria}} </p>
                 </div>
             @empty
