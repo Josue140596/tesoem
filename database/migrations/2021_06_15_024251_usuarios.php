@@ -24,8 +24,6 @@ class Usuarios extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->text('direccion', 255);
             $table->string('cod_postal', 5);
-            $table->string('localidad', 100);
-            $table->string('semestre', 2);
             $table->date('fecha_nacimiento');
             $table->text('password', 255);
             $table->text('foto', 255);
